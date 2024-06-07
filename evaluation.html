@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style/style.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+  <link rel="manifest" href="static/favicon/site.webmanifest">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <title>EndoTect 2020</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">EndoTect 2020</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav mr-4">
+          <li class="nav-item"><a class="nav-link" data-value="tasks" href="tasks.html">Tasks</a></li>
+          <li class="nav-item"><a class="nav-link" data-value="github"
+              href="https://github.com/simula/icpr-endotect-2020">GitHub</a></li>
+          <li class="nav-item"><a class="nav-link" data-value="register"
+              href="https://forms.gle/UNFiZG9ibDpz82nj8">Register</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="row alternating no-gutters"></div>
+  <div class="row alternating no-gutters">
+    <div class="container info-row">
+      <h1>Evaluation</h1>
+      <p>
+        The official metric for evaluating the multi-class classification is the multi-class generalization of the
+        <a href="https://en.wikipedia.org/wiki/Matthews_correlation_coefficient">Matthews correlation coefficient
+          (MCC)</a>. This generalization called the R_K statistic (for K different classes)
+        and defined in terms of a KxK confusion matrix C.
+      </p>
+      <p>
+        The R_K statistic is in essence a correlation coefficient between the observed and predicted binary
+        classifications for (for K different classes); it returns a value between −1 and +1. A coefficient of +1
+        represents a perfect prediction, 0 no better than random prediction and a value &lt; 0 indicates disagreement
+        between prediction and observation (the lower negative value corresponds to the stronger disagreement). The
+        minimum negative value of the R_K statistic will be between -1 and 0 depending on the true distribution. The
+        maximum value is always +1.
+      </p>
+      <p>
+        For the efficient detection task, the evaluation will be performed based on time and detection performance
+        running
+        all submitted code on the same machine.
+      </p>
+    </div>
+  </div>
+
+
+  <footer class="page-footer font-small teal pt-4 container">
+    <div class="container-fluid text-center text-md-left">
+      <div class="row alternating">
+        <div class="col-md-6 mt-md-0 mt-3">
+          <h5 class="text-uppercase font-weight-bold">Challenge Organizers</h5>
+          Steven Hicks (steven@simula.no), Debesh Jha (debesh@simula.no), Hugo Hammer (hugoh@oslomet.no), Pål
+          Halvorsen (paalh@simula.no), and Michael Riegler (michael@simula.no).
+        </div>
+        <hr class="clearfix w-100 d-md-none pb-3">
+        <div class="col-md-6 mb-md-0 mb-3">
+          <h5 class="text-uppercase font-weight-bold">About SimulaMet</h5>
+          <p>Simula Metropolitan (SimulaMet) is a research center with activities within networks and communications,
+            machine learning and IT management. </p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+      <a href="https://www.simulamet.no/"> SimulaMet</a>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src='js/main.js'></script>
+</body>
+
+</html>

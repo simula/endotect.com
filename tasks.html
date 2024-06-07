@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style/style.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+  <link rel="manifest" href="static/favicon/site.webmanifest">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <title>EndoTect 2020</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">EndoTect 2020</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav mr-4">
+          <li class="nav-item"><a class="nav-link" data-value="tasks" href="tasks.html">Tasks</a></li>
+          <li class="nav-item"><a class="nav-link" data-value="github"
+              href="https://github.com/simula/icpr-endotect-2020">GitHub</a></li>
+          <li class="nav-item"><a class="nav-link" data-value="register"
+              href="https://forms.gle/UNFiZG9ibDpz82nj8">Register</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="row alternating no-gutters"></div>
+  <div class="row alternating no-gutters">
+    <div class="container info-row">
+      <h1>Tasks</h1>
+      <p>
+        To participate, each participants will have to submit runs for the following two tasks:
+      </p>
+      <ul>
+        <li><strong>Detection</strong> The <i>detection task</i> stems from the requirement of the high detection
+          accuracy needed to be viable for use in a clinical setting. Participants are asked to develop algorithms that
+          achieve high classification scores on the 23 different classes presented in the development dataset. Each
+          submission should consist of a single ".csv" file, which contains one line per image in the unlabeled dataset.
+          Each line should start with the name of the predicted file, followed by the predicted label, and then end with
+          the model's confidence of that prediction.</li>
+        <li><strong>Efficient Detection</strong> The <i>efficient detection task</i> focuses on the real-time analysis
+          needed to deliver instant feedback to doctors performing endoscopies. To satisfy this requirement, the
+          algorithm must achieve good classification scores while also being able to classify images as fast as they are
+          put on screen, which is approximately 30 frames per second. Submissions to this task require the participants
+          to submit their code in the form of a Docker image so that we, the organizers, can evaluate the submissions on
+          the same hardware. The Docker image should produce a ".csv" file similar to that of the <i>detection task</i>,
+          with the addition of the processing time being added to the end of each line.</li>
+        <li><strong>Segmentation</strong> In the <i>segmentation task</i>, we ask participants to use test images
+          provided in the dataset to generate
+          segmentations of polyps automatically. Polyps are clumps of cells that form on the mucosal wall of the GI
+          tract. They are among the most important findings in an endoscopy procedure as they are a precursor to
+          different cancer types, including colorectal cancer, which is one of the most lethal cancer types. For this
+          task, we ask the participants to submit the zip file that contains predicted mask. The size of the predicted
+          mask should be equal to the provided test dataset.
+      </ul>
+    </div>
+  </div>
+  <div class="row alternating no-gutters">
+    <div class="container info-row">
+      <h1>Sumbission Details</h1>
+      <p>
+        Submissions should be submitted in separated files with the following names, depending on the subtask:
+      </p>
+      <pre><code> endotect20_GroupName_SubmissionName_SubmissionId.csv</code></pre>
+      <ul>
+        <li><strong>GroupName</strong> The name of the participating group, maximum 12 symbols (example: colonwizards)
+        </li>
+        <li><strong>SubmissionName</strong> The id of the submission, maximum 9 symbols, one of the following ids:
+          detection, speed, segmentation.</li>
+        <li><strong>SubmissionId</strong> The id of the submission, maximum 15 symbols (example: ver1)</li>
+        <li><strong>Example</strong> endotect20_colonwizards_detection_ver1.csv</li>
+      </ul>
+      <p>To submit, please zip the submission files and send the zip archive via regular e-mail to the task organizers
+        Pål Halvorsen (paalh at simula.no), Steven Hicks (steven at simula.no) and Michael Riegler (Michael at
+        simula.no).</p>
+      <p>More details on how to submit for the specific tasks can be found found below.</p>
+    </div>
+  </div>
+
+  <div class="row alternating no-gutters">
+    <div class="container info-row">
+      <h1>Sumbission Format</h1>
+      <p>
+        Information on how to prepare the Docker image and submissions can be found <a
+          href="https://github.com/simula/endotect-2020-sample-submission">here</a>.
+      </p>
+      <p>
+      <h3>Detection (ID: detection)</h3>
+      <p>Submissions to the detection task should be a .CSV file containing the the image name, classification label,
+        and confidence value. The .CSV file should be generated using the test dataset.</p>
+
+      <strong>Ranking</strong>
+      Submissions to the detection task will be ranekd based on the achieved MCC on the test dataset. In all the
+      submissions the confidence value/interestingness level/rank value refers to rank orders, expressing an
+      expectation that some classified instances are more likely to be positive / correctly classified than others. The
+      rank value is expected to be a floating-point value within [0.0;1.0] interval deciding for any pair of instances
+      whether the first is more likely (>), equally likely (=), or less likely (<) to be positive / correctly classified
+        than the second. If your algorithm does not provide any ranking for the classified instances, you must use 1.0
+        as the rank value. </p>
+        <p>
+        <h3>Efficient Detection (ID: speed)</h3>
+        <p>Submissions to the efficient detection task are similar to the detection task, but also include information
+          about processing time. The .CSV file should contain the image name, classification label, confidence value,
+          image processing time in seconds. The .CSV file should be generated by a Docker image containing your code and
+          takes the test dataset as input.</p>
+        <strong>Ranking</strong>
+        Submissions ot the Efficient detection task will be ranked based on their processing time in seconds and
+        achieved MCC. The image processing time in seconds value refers to a time interval
+        from the moment when image has been completely loaded into memory to the moment of the final decision about the
+        image class made by the classification algorithm. In other words, the full amount of time required to classify a
+        particular image minus time spent to image loading and classification results saving.
+        </p>
+        <p>
+        <h3>Segmentation (ID: segmentation)</h3>
+        <p>
+          Submissions to the segmentation task should be a single zip file for all the predicted mask. The name of the
+          predicted mask image should be the same as the
+          input image.
+        </p>
+        <strong>Ranking</strong> Submissions to the segmentation task will be ranked based on their achieved <a
+          href="https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient">DICE score</a> on the provided
+        test dataset.
+        <p>
+    </div>
+  </div>
+  <footer class="page-footer font-small teal pt-4 container">
+    <div class="container-fluid text-center text-md-left">
+      <div class="row alternating">
+        <div class="col-md-6 mt-md-0 mt-3">
+          <h5 class="text-uppercase font-weight-bold">Challenge Organizers</h5>
+          Steven Hicks (steven@simula.no), Debesh Jha (debesh@simula.no), Hugo Hammer (hugoh@oslomet.no), Pål
+          Halvorsen (paalh@simula.no), and Michael Riegler (michael@simula.no).
+        </div>
+        <hr class="clearfix w-100 d-md-none pb-3">
+        <div class="col-md-6 mb-md-0 mb-3">
+          <h5 class="text-uppercase font-weight-bold">About SimulaMet</h5>
+          <p>Simula Metropolitan (SimulaMet) is a research center with activities within networks and communications,
+            machine learning and IT management. </p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+      <a href="https://www.simulamet.no/"> SimulaMet</a>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src='js/main.js'></script>
+</body>
+
+</html>

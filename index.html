@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style/style.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+  <link rel="manifest" href="static/favicon/site.webmanifest">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <title>EndoTect 2020</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">EndoTect 2020</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav mr-4">
+          <li class="nav-item"><a class="nav-link" data-value="tasks" href="tasks.html">Tasks</a></li>
+          <li class="nav-item"><a class="nav-link" data-value="github"
+              href="https://github.com/simula/icpr-endotect-2020">GitHub</a></li>
+          <li class="nav-item"><a class="nav-link" data-value="register"
+              href="https://forms.gle/iMWGsZC6tAMeV6EA9">Register</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="header d-flex align-items-center">
+    <div class="background-image"></div>
+    <div class="container cetner text-center align-middle">
+      <div class="title-container">
+        <h1>EndoTect Challenge</h1>
+        <h2><a href="https://www.micc.unifi.it/icpr2020/">ICPR 2020</a></h2>
+        <h2>10 - 15 Januar 2021, Milan, Italy</h2>
+      </div>
+    </div>
+  </div>
+  <div class="row alternating no-gutters">
+    <div class="container info-row">
+      <h1>Overview</h1>
+      <p>
+        The human digestive system is prone to suffer from many different diseases and abnormalities throughout a human
+        lifetime. Some of these may be life-threatening and pose a serious risk to a patient's health and well-being. In
+        most cases, if the detection of lethal disease is done early enough, it can be treated with a high chance of
+        being
+        fully healed. Therefore, it is important that all lesions are identified and reported during a routine
+        investigation of the GI tract. Currently, the gold-standard in performing these investigations is through video
+        endoscopies, which is a procedure involving a small camera attached to a tube that is inserted either orally or
+        rectally. However, there is one major downside to this procedure. The method is highly dependent on the skill
+        and
+        experience of the person operating the endoscope, which in turn results in a high operator variation and
+        performance. This is one of the reasons for high miss-rates when measuring polyp detection performance, with
+        some
+        miss-rates being as high as 20%. We see this as an opportunity to aid medical doctors by helping them detect
+        lesions through automatic frame analysis done live during endoscopy examinations. The pattern recognition
+        community has a lot of knowledge which could assist in this task, making it a perfect fit for ICPR. The work
+        done
+        in this competition has the potential of making a real societal impact, as it directly affects the quality of
+        care
+        that health-care professionals can provide.
+      </p>
+      <p>
+        The challenge consists of three tasks, each targeting a different requirement for
+        in-clinic use. The first task involves classifying images from the GI tract into 23 distinct classes. The second
+        task focuses on efficiant classification measured by the amount of time spent processing each image. The last
+        task relates to automatcially segmenting polyps. More information can be found on the task page.
+      </p>
+    </div>
+  </div>
+  <div class="row alternating no-gutters">
+    <div class="container info-row">
+      <div class="row justify-content-center">
+        <div class="col-sm-7 d-inline-block">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Development Dataset</h5>
+              <p class="card-text">The dataset can be split into four distinct parts; Labeled image data, unlabeled
+                image data, segmented image data, and annotated video data. Each part is further described below. In
+                total, the dataset contains 110,079 images and 373 videos where it captures anatomical landmarks and
+                pathological and normal findings. The results is more than 1.1 million images and video frames all
+                together.</p>
+              <a href="https://datasets.simula.no/downloads/hyper-kvasir/hyper-kvasir-labeled-images.zip"
+                class="btn btn-primary">Labeled Images</a>
+              <a href="https://datasets.simula.no/downloads/hyper-kvasir/hyper-kvasir-unlabeled-images.zip"
+                class="btn btn-primary">Unlabeled Images</a>
+              <a href="https://datasets.simula.no/downloads/hyper-kvasir/hyper-kvasir-segmented-images.zip"
+                class="btn btn-primary">Segmented Images</a>
+              <a href="https://datasets.simula.no/downloads/hyper-kvasir/hyper-kvasir-videos.zip"
+                class="btn btn-primary">Videos</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-5 d-inline-block">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Test Dataset</h5>
+              <p class="card-text"> The dataset is split into two distinct parts; the classification dataset and
+                segmentation dataset. The classification dataset should be used to perform the
+                <strong>detection</strong> and <strong>speed</strong> tasks, while the segmentation part should be used
+                for the <strong>segmentation</strong> task. </p>
+              <a href="https://drive.google.com/file/d/19cBAyQuEBMfydKZIV0N1q8StJLmuQHWM/view"
+                class="btn btn-primary">Classification Dataset</a>
+              <a href="https://drive.google.com/file/d/1LNpLkv5ZlEUzr_RPN5rdOHaqk0SkZa3m/view"
+                class="btn btn-primary">Segmentation Dataset</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row alternating no-gutters">
+    <div class="container info-row">
+      <h1>Dataset Details</h1>
+
+      <p>
+        <strong>Labeled Images.</strong> In total, the dataset contains 10,662 labeled images stored using the JPEG
+        format. The images can be found in the images folder. The classes, which each of the images belongto, correspond
+        to the folder they are stored in (e.g., the "polyp" folder contains all polyp images, the "barretts" folder
+        contains all images of Barrett’s esophagus, etc.). The number of images per class are not balanced, which is a
+        general challenge in the medical field due to the fact that some findings occur more often than others. This
+        adds an additional challenge for researchers, since methods applied to the data should also be able to learn
+        from a small amount of training data. The labeled images represent 23 different classes of findings.
+      </p>
+      <p>
+        <strong>Unlabeled Images.</strong> In total, the dataset contains 99,417 unlabeled images. The unlabeled images
+        can be found in the unlabeled folder which is a subfolder in the image folder, together with the other labeled
+        image folders. In addition to the unlabeled image files, we also provide the extracted global features and
+        cluster assignments in the Hyper-Kvasir Github repository as Attribute-Relation File Format (ARFF) files. ARFF
+        files can be opened and processed using, for example, the WEKA machine learning library, or they can easily be
+        converted into comma-separated values (CSV) files.
+      </p>
+      <p>
+        <strong>Segmented Images.</strong> We provide the original image, a segmentation mask and a bounding box for
+        1,000 images from the polyp class. In the mask, the pixels depicting polyp tissue, the region of interest, are
+        represented by the foreground (white mask), while the background (in black) does not contain polyp pixels. The
+        bounding box is defined as the outermost pixels of the found polyp. For this segmentation set, we have two
+        folders, one for images and one for masks, each containing 1,000 JPEG-compressed images. The bounding boxes for
+        the corresponding images are stored in a JavaScript Object Notation (JSON) file. The image and its corresponding
+        mask have the same filename. The images and files are stored in the segmented images folder. It is important to
+        point out that the segmented images have duplicates in the images folder of polyps since the images were taken
+        from there.
+      </p>
+      <p>
+        <strong>Annotated Videos.</strong> The dataset contains a total of 373 videos containing different findings and
+        landmarks. This corresponds to approximately 11.62 hours of videos and 1,059,519 video frames that can be
+        converted to images if needed. Each video has been manually assessed by a medical professional working in the
+        field of gastroenterology and resulted in a total of 171 annotated findings.
+      </p>
+    </div>
+  </div>
+  <div class="row alternating no-gutters">
+    <div class="container info-row">
+      <h1>Important Dates</h1>
+      <ul class="timeline">
+        <li>
+          <div class="timeline-date d-inline-block">September 1, 2020</div> <span>-</span> <span>Test dataset available
+            for
+            download</span>
+        </li>
+        <li>
+          <div class="timeline-date d-inline-block">November 1, 2020</div> <span>-</span> <span>Results submission
+            deadline</span>
+        </li>
+        <li>
+          <div class="timeline-date d-inline-block">November 7, 2020</div> <span>-</span> <span>Evaluation results
+            released</span>
+        </li>
+        <li>
+          <div class="timeline-date d-inline-block"><s>November 14, 2020</div> <span>-</span> <span>Paper deadline</span></s>
+        </li>
+        <li>
+          <div class="timeline-date d-inline-block">November 10, 2020</div> <span>-</span> <span>Paper deadline</span>
+        </li>
+        <li>
+          <div class="timeline-date d-inline-block"><s>November 17, 2020</div> <span>-</span> <span>Paper reviews
+            returned</span></s>
+        </li>
+        <li>
+          <div class="timeline-date d-inline-block">November 12, 2020</div> <span>-</span> <span>Paper reviews
+            returned</span>
+        </li>
+        <li>
+          <div class="timeline-date d-inline-block"><s>December 1, 2020</div> <span>-</span> <span>Camera-ready
+            deadline</span></s>
+        </li>
+        <li>
+          <div class="timeline-date d-inline-block">November 14, 2020</div> <span>-</span> <span>Camera-ready
+            deadline</span>
+        </li>
+        <li>
+          <div class="timeline-date d-inline-block">January 10, 2021</div> <span>-</span> <span>First day of ICPR</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row alternating no-gutters">
+    <footer class="page-footer font-small teal pt-4 container">
+      <div class="container-fluid text-center text-md-left">
+        <div class="row">
+          <div class="col-md-6 mt-md-0 mt-3">
+            <h5 class="text-uppercase font-weight-bold">Challenge Organizers</h5>
+            Steven Hicks (steven@simula.no), Debesh Jha (debesh@simula.no), Hugo Hammer (hugoh@oslomet.no), Pål
+            Halvorsen (paalh@simula.no), and Michael Riegler (michael@simula.no).
+          </div>
+          <hr class="clearfix w-100 d-md-none pb-3">
+          <div class="col-md-6 mb-md-0 mb-3">
+            <h5 class="text-uppercase font-weight-bold">About SimulaMet</h5>
+            <p>Simula Metropolitan (SimulaMet) is a research center with activities within networks and communications,
+              machine learning and IT management. </p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a href="https://www.simulamet.no/"> SimulaMet</a>
+      </div>
+    </footer>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
